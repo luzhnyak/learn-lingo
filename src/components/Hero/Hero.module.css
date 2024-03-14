@@ -1,0 +1,61 @@
+.list {
+  display: flex;
+  padding: 0;
+  margin: 0 0 24px 0;
+  gap: 24px;
+  align-items: center;
+  list-style: none;
+}
+
+.itemLeft {
+  padding: 98px 64px;
+  width: 720px;
+  height: 530px;
+  background-color: #f8f8f8;
+  border-radius: 30px;
+}
+
+.title {
+  font-size: 48px;
+  font-weight: 500;
+  margin-bottom: 32px;
+}
+
+.italic {
+  font-style: italic;
+  font-weight: 400;
+  padding: 0 6px;
+  letter-spacing: -0.02em;
+  /* line-height: 48px; */
+  /* height: 48px; */
+  background-image: url("../../images/italic-fon.svg");
+  background-position: center bottom 6px;
+  background-repeat: no-repeat;
+}
+
+.text {
+  width: 471px;
+  margin-bottom: 64px;
+  line-height: 22px;
+}
+
+.itemRight {
+  width: 568px;
+  height: 530px;
+  background-color: #bfd6ea;
+  background-image: url("../../images/sticker.png");
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  border-radius: 30px;
+}
+
+.btn {
+  width: 267px;
+  height: 60px;
+  background-color: #9fb7ce;
+  border: none;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--primary-color-black);
+}

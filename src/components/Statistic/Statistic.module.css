@@ -1,6 +1,10 @@
 .wrapper {
-  padding: 40px 122px;
-  border: 2px dotted #9fb7ce;
+  padding: 40px 16px;
+  border: 1px dashed #9fb7ce;
+  /* background-image: url("../../images/border.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center; */
   border-radius: 30px;
 }
 
@@ -8,8 +12,11 @@
   padding: 0;
   margin: 0;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
+  /* column-gap: 100px; */
+  row-gap: 40px;
   list-style: none;
 }
 
