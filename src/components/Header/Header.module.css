@@ -1,0 +1,62 @@
+.nav {
+  padding: 20px 64px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.menu {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  align-items: center;
+  gap: 28px;
+  list-style: none;
+}
+
+.wrapperBtn {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  align-items: center;
+  gap: 16px;
+}
+
+.btnLogin {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 14px 0px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.btnLogin:hover,
+.btnLogin:active {
+  color: var(--active-color-black);
+}
+
+.btnRegistration {
+  padding: 14px 39px;
+  border: none;
+  border-radius: 12px;
+  background-color: var(--primary-color-black);
+  color: var(--primary-color-white);
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.btnRegistration:hover,
+.btnRegistration:active {
+  background-color: var(--active-color-black);
+}

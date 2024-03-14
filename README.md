@@ -1,12 +1,11 @@
-# Medicine Delivery
+# Learn Lingo
 
 ## Description
 
-Medicine Delivery is an online platform for purchasing medicines from various pharmacies. Users can browse through different pharmacies and their available medicines, add them to their cart, and place orders.
+Application for finding language teachers online.
 
-[Frontend](https://github.com/luzhnyak/medicine-delivery-app)
-[Backend](https://github.com/luzhnyak/medicine-delivery-backend)
-[Live page](https://luzhnyak.github.io/medicine-delivery-app/)
+[Frontend](https://github.com/luzhnyak/learn-lingo)
+[Live page](https://luzhnyak.github.io/learn-lingo/)
 
 ## Features
 
