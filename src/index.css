@@ -3,6 +3,8 @@
   --active-color-black: rgba(18, 20, 23, 0.7);
   --backdrop-color-black: rgba(18, 20, 23, 0.5);
   --primary-color-white: #ffffff;
+  --primary-color-fon: #9fb7ce;
+  --secondary-color-fon: #bfd6ea;
 }
 
 body {
@@ -38,4 +40,26 @@ a.active {
   border: none;
   background-color: transparent;
   cursor: pointer;
+}
+
+input[type="radio"]:checked {
+  background-color: var(--primary-color-fon);
+  color: var(--primary-color-fon);
+}
+
+input[type="radio"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid var(--primary-color-fon); /* колір обведення */
+  outline: none;
+}
+
+input[type="radio"]:checked {
+  background-color: var(--primary-color-fon);
+  background-clip: content-box;
+  padding: 2px;
 }

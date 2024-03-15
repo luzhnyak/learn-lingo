@@ -42,17 +42,15 @@ const Modal: FC<IProps> = ({ children, onClose }) => {
   return modalRoot ? (
     createPortal(
       <div className={css.backdrop}>
-        <div className={css.container}>
-          <div
-            ref={modalRef}
-            className={css.modal}
-            onClick={(event) => event.stopPropagation()}
-          >
-            <button className={css.btnClose} onClick={() => onClose(false)}>
-              <img src={closeIcon} width={32} height={32} alt="Close" />
-            </button>
-            <div className={css.content}>{children}</div>
-          </div>
+        <div
+          ref={modalRef}
+          className={css.modal}
+          onClick={(event) => event.stopPropagation()}
+        >
+          <button className={css.btnClose} onClick={() => onClose(false)}>
+            <img src={closeIcon} width={32} height={32} alt="Close" />
+          </button>
+          <div className={css.content}>{children}</div>
         </div>
       </div>,
       modalRoot

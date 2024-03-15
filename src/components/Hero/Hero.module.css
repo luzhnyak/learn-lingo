@@ -50,12 +50,18 @@
 }
 
 .btn {
+  cursor: pointer;
   width: 267px;
   height: 60px;
-  background-color: #9fb7ce;
+  background-color: var(--primary-color-fon);
   border: none;
   border-radius: 12px;
   font-size: 18px;
   font-weight: 600;
   color: var(--primary-color-black);
+}
+
+.btn:hover,
+.btn:active {
+  background-color: var(--secondary-color-fon);
 }
