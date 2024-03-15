@@ -1,0 +1,134 @@
+.wrapper {
+  display: flex;
+  gap: 48px;
+  width: 1184px;
+  border-radius: 24px;
+  border: 1px solid grey;
+  padding: 24px;
+}
+
+.imageWrapper {
+  width: 126px;
+  height: 126px;
+  padding: 12px;
+  border-radius: 50%;
+  border: 3px solid #fbe9ba;
+  display: block;
+}
+
+.image {
+  border-radius: 50%;
+  display: block;
+}
+
+.cardBody {
+  width: 100%;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.languages {
+  margin-right: auto;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #8a8a89;
+}
+
+.headerList {
+  display: flex;
+  gap: 16px;
+  padding: 0;
+  margin: 0;
+  margin-right: 64px;
+  list-style: none;
+}
+
+.headerItem {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0;
+  margin: 0;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.price {
+  color: #38cd3e;
+}
+
+.headerItem:not(:last-child)::after {
+  content: "";
+  margin-left: 16px;
+  /* margin-right: 16px; */
+  width: 0px;
+  height: 16px;
+  border: 1px solid rgba(18, 20, 23, 0.2);
+}
+
+.cardTitle {
+  height: 24px;
+  margin-bottom: 32px;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 24px;
+}
+
+.btnFav {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  width: 26px;
+  height: 26px;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.cardInfo {
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.greyText {
+  color: #8a8a89;
+}
+
+.btnReadMore {
+  margin-top: 16px;
+  margin-bottom: 32px;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  text-decoration: underline;
+}
+
+.cardFooter {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 8px;
+  list-style: none;
+}
+
+.footerItem {
+  padding: 8px 12px;
+  font-weight: 500;
+  border: 1px solid rgba(18, 20, 23, 0.2);
+  border-radius: 35px;
+}
+
+.footerItem:first-child {
+  border: 1px solid #f4c550;
+  background-color: #f4c550;
+}
