@@ -5,6 +5,12 @@ import * as yup from "yup";
 import eye from "../../images/eye.svg";
 import eyeOff from "../../images/eye-off.svg";
 
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  updateProfile,
+} from "firebase/auth";
+
 const registerSchema = yup.object({
   name: yup.string().min(2).required(),
   email: yup.string().email().required(),
@@ -30,7 +36,41 @@ const RegisterForm: FC = () => {
     values: SubmitValues,
     { resetForm }: FormikHelpers<SubmitValues>
   ) => {
-    console.log(values);
+    const auth = getAuth();
+    const { name, email, password } = values;
+
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        // Signed up
+        const user = userCredential.user;
+
+        if (auth.currentUser) {
+          updateProfile(auth.currentUser, {
+            displayName: name,
+            // photoURL: 'https://example.com/jane-q-user/profile.jpg',
+          })
+            .then(() => {
+              console.log(user);
+              // dispatch(
+              //   setUser({
+              //     id: user.uid,
+              //     name: user.displayName,
+              //     email: user.email,
+              //     token: user.accessToken,
+              //   })
+              // );
+            })
+            .catch((error) => {
+              console.log(error);
+
+              // toast.error(error.message);
+            });
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+        // toast.error(error.message);
+      });
 
     resetForm();
   };

@@ -1,6 +1,6 @@
 import { Navigate, Route, Routes } from "react-router-dom";
 import { lazy } from "react";
-
+import "./firebase-api";
 import { SharedLayout } from "./components/SharedLayout";
 
 const HomePage = lazy(() => import("./pages/HomePage"));

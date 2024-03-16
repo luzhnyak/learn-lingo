@@ -4,6 +4,7 @@ import { Formik, Form, Field, ErrorMessage, FormikHelpers } from "formik";
 import * as yup from "yup";
 import eye from "../../images/eye.svg";
 import eyeOff from "../../images/eye-off.svg";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
 const loginSchema = yup.object({
   email: yup.string().email().required(),
@@ -27,7 +28,29 @@ const LoginForm: FC = () => {
     values: SubmitValues,
     { resetForm }: FormikHelpers<SubmitValues>
   ) => {
-    console.log(values);
+    const auth = getAuth();
+    const { email, password } = values;
+
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        // Signed up
+        const user = userCredential.user;
+        console.log(user);
+
+        // dispatch(
+        //   setUser({
+        //     id: user.uid,
+        //     name: user.displayName,
+        //     email: user.email,
+        //     token: user.accessToken,
+        //   })
+        // );
+      })
+      .catch((error) => {
+        console.log(error);
+
+        // toast.error(error.message);
+      });
 
     resetForm();
   };
