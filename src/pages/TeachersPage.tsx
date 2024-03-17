@@ -2,9 +2,10 @@ import { FC, useEffect } from "react";
 // import shallow from "zustand/shallow";
 import Card from "../components/Card/Card";
 import { useTeachers } from "../store";
+// import { getTeachers } from "../services/teachersApi";
 
 const TeachersPage: FC = () => {
-  const { loading, error, items, loadTeachers } = useTeachers(
+  const { items, loadTeachers } = useTeachers(
     (state) => ({
       loading: state.loading,
       error: state.error,
@@ -16,13 +17,13 @@ const TeachersPage: FC = () => {
 
   useEffect(() => {
     loadTeachers();
-    console.log(items);
-  }, []);
+  }, [loadTeachers]);
 
   return (
     <main className="container">
-      <Card />
-      {items.map((item) => item.id)}
+      {items.map((item) => (
+        <Card key={item.id} data={item} />
+      ))}
     </main>
   );
 };

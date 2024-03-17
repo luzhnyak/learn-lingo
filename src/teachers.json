@@ -17,11 +17,13 @@
       {
         "reviewer_name": "Alice",
         "reviewer_rating": 5,
+        "avatar_url": "https://ftp.goit.study/img/avatars/30.jpg",
         "comment": "John is an excellent teacher! I highly recommend him."
       },
       {
         "reviewer_name": "Bob",
         "reviewer_rating": 4,
+        "avatar_url": "https://ftp.goit.study/img/avatars/29.jpg",
         "comment": "John is very knowledgeable and patient. I enjoyed his classes."
       }
     ],
@@ -51,11 +53,13 @@
       {
         "reviewer_name": "Eve",
         "reviewer_rating": 5,
+        "avatar_url": "https://ftp.goit.study/img/avatars/28.jpg",
         "comment": "Jane is an amazing teacher! She is patient and supportive."
       },
       {
         "reviewer_name": "Frank",
         "reviewer_rating": 4,
+        "avatar_url": "https://ftp.goit.study/img/avatars/27.jpg",
         "comment": "Jane's lessons were very helpful. I made good progress."
       }
     ],
@@ -80,11 +84,13 @@
       {
         "reviewer_name": "Grace",
         "reviewer_rating": 4,
+        "avatar_url": "https://ftp.goit.study/img/avatars/26.jpg",
         "comment": "David explains things clearly and is knowledgeable in the subject."
       },
       {
         "reviewer_name": "Henry",
         "reviewer_rating": 3,
+        "avatar_url": "https://ftp.goit.study/img/avatars/25.jpg",
         "comment": "David's teaching style didn't suit me, but he is still a good teacher."
       }
     ],
@@ -109,11 +115,13 @@
       {
         "reviewer_name": "Emily",
         "reviewer_rating": 4,
+        "avatar_url": "https://ftp.goit.study/img/avatars/24.jpg",
         "comment": "Sarah is a patient and helpful teacher. I enjoyed her lessons."
       },
       {
         "reviewer_name": "Alex",
         "reviewer_rating": 5,
+        "avatar_url": "https://ftp.goit.study/img/avatars/23.jpg",
         "comment": "Sarah's teaching style is engaging and effective. Highly recommended."
       }
     ],
@@ -143,11 +151,13 @@
       {
         "reviewer_name": "Sophia",
         "reviewer_rating": 5,
+        "avatar_url": "https://ftp.goit.study/img/avatars/26.jpg",
         "comment": "Michael is an excellent teacher. He makes learning Spanish fun and engaging."
       },
       {
         "reviewer_name": "Oliver",
         "reviewer_rating": 4,
+        "avatar_url": "https://ftp.goit.study/img/avatars/25.jpg",
         "comment": "I have made great progress with Michael's lessons. Highly recommended."
       }
     ],
@@ -172,11 +182,13 @@
       {
         "reviewer_name": "Liam",
         "reviewer_rating": 5,
+        "avatar_url": "https://ftp.goit.study/img/avatars/24.jpg",
         "comment": "Emma is an amazing teacher. Her lessons are interactive and engaging."
       },
       {
         "reviewer_name": "Mia",
         "reviewer_rating": 4,
+        "avatar_url": "https://ftp.goit.study/img/avatars/23.jpg",
         "comment": "I have learned a lot from Emma's lessons. Highly recommended for French and Italian."
       }
     ],
@@ -201,11 +213,13 @@
       {
         "reviewer_name": "Sophie",
         "reviewer_rating": 5,
+        "avatar_url": "https://ftp.goit.study/img/avatars/22.jpg",
         "comment": "Alexander is a patient and knowledgeable teacher. I have learned a lot from his lessons."
       },
       {
         "reviewer_name": "Daniel",
         "reviewer_rating": 4,
+        "avatar_url": "https://ftp.goit.study/img/avatars/21.jpg",
         "comment": "I highly recommend Alexander. His lessons are engaging and well-structured."
       }
     ],
@@ -235,11 +249,13 @@
       {
         "reviewer_name": "Ethan",
         "reviewer_rating": 5,
+        "avatar_url": "https://ftp.goit.study/img/avatars/13.jpg",
         "comment": "Sophia is an excellent teacher. Her lessons are fun and interactive."
       },
       {
         "reviewer_name": "Ava",
         "reviewer_rating": 4,
+        "avatar_url": "https://ftp.goit.study/img/avatars/14.jpg",
         "comment": "I have improved my Spanish and French skills significantly with Sophia's lessons."
       }
     ],
@@ -264,11 +280,13 @@
       {
         "reviewer_name": "Olivia",
         "reviewer_rating": 4,
+        "avatar_url": "https://ftp.goit.study/img/avatars/11.jpg",
         "comment": "Max is a dedicated and knowledgeable teacher. I enjoyed his German lessons."
       },
       {
         "reviewer_name": "Noah",
         "reviewer_rating": 5,
+        "avatar_url": "https://ftp.goit.study/img/avatars/12.jpg",
         "comment": "I highly recommend Max for German lessons. He explains concepts clearly and provides useful tips."
       }
     ],
@@ -293,11 +311,13 @@
       {
         "reviewer_name": "Liam",
         "reviewer_rating": 5,
+        "avatar_url": "https://ftp.goit.study/img/avatars/9.jpg",
         "comment": "Isabella is a fantastic teacher. Her lessons are engaging and effective."
       },
       {
         "reviewer_name": "Mia",
         "reviewer_rating": 4,
+        "avatar_url": "https://ftp.goit.study/img/avatars/10.jpg",
         "comment": "I have made significant progress with Isabella's lessons. Highly recommended."
       }
     ],
@@ -327,11 +347,13 @@
       {
         "reviewer_name": "Sophie",
         "reviewer_rating": 5,
+        "avatar_url": "https://ftp.goit.study/img/avatars/8.jpg",
         "comment": "Daniel is an excellent teacher. His lessons are well-structured and enjoyable."
       },
       {
         "reviewer_name": "Benjamin",
         "reviewer_rating": 4,
+        "avatar_url": "https://ftp.goit.study/img/avatars/7.jpg",
         "comment": "I have learned a lot from Daniel's lessons. Highly recommended for French learners."
       }
     ],
@@ -356,11 +378,13 @@
       {
         "reviewer_name": "Jacob",
         "reviewer_rating": 5,
+        "avatar_url": "https://ftp.goit.study/img/avatars/6.jpg",
         "comment": "Olivia is an amazing Italian teacher. Her lessons are engaging and informative."
       },
       {
         "reviewer_name": "Emily",
         "reviewer_rating": 4,
+        "avatar_url": "https://ftp.goit.study/img/avatars/5.jpg",
         "comment": "I have improved my Italian skills significantly with Olivia's lessons. Highly recommended."
       }
     ],
@@ -390,11 +414,13 @@
       {
         "reviewer_name": "Ava",
         "reviewer_rating": 5,
+        "avatar_url": "https://ftp.goit.study/img/avatars/4.jpg",
         "comment": "Ethan is an excellent teacher. His lessons are engaging and tailored to individual needs."
       },
       {
         "reviewer_name": "Noah",
         "reviewer_rating": 4,
+        "avatar_url": "https://ftp.goit.study/img/avatars/3.jpg",
         "comment": "I highly recommend Ethan. He makes learning languages enjoyable and productive."
       }
     ],
@@ -419,11 +445,13 @@
       {
         "reviewer_name": "Liam",
         "reviewer_rating": 5,
+        "avatar_url": "https://ftp.goit.study/img/avatars/2.jpg",
         "comment": "Emily is an excellent teacher. Her lessons are well-structured and informative."
       },
       {
         "reviewer_name": "Mia",
         "reviewer_rating": 4,
+        "avatar_url": "https://ftp.goit.study/img/avatars/1.jpg",
         "comment": "I have learned a lot from Emily's lessons. Highly recommended for French and German learners."
       }
     ],
@@ -453,11 +481,13 @@
       {
         "reviewer_name": "Olivia",
         "reviewer_rating": 5,
+        "avatar_url": "https://ftp.goit.study/img/avatars/18.jpg",
         "comment": "Jacob is an excellent Mandarin teacher. His lessons are clear, structured, and enjoyable."
       },
       {
         "reviewer_name": "Daniel",
         "reviewer_rating": 4,
+        "avatar_url": "https://ftp.goit.study/img/avatars/17.jpg",
         "comment": "I have improved my Mandarin skills significantly with Jacob's lessons. Highly recommended."
       }
     ],
@@ -487,11 +517,13 @@
       {
         "reviewer_name": "Noah",
         "reviewer_rating": 5,
+        "avatar_url": "https://ftp.goit.study/img/avatars/30.jpg",
         "comment": "Ava is a fantastic teacher. Her lessons are engaging and effective."
       },
       {
         "reviewer_name": "Sophia",
         "reviewer_rating": 4,
+        "avatar_url": "https://ftp.goit.study/img/avatars/29.jpg",
         "comment": "I have made significant progress with Ava's lessons. Highly recommended."
       }
     ],
@@ -516,11 +548,13 @@
       {
         "reviewer_name": "Olivia",
         "reviewer_rating": 5,
+        "avatar_url": "https://ftp.goit.study/img/avatars/28.jpg",
         "comment": "Benjamin is an excellent teacher. His lessons are engaging and tailored to individual needs."
       },
       {
         "reviewer_name": "Daniel",
         "reviewer_rating": 4,
+        "avatar_url": "https://ftp.goit.study/img/avatars/27.jpg",
         "comment": "I highly recommend Benjamin. He makes learning Spanish enjoyable and productive."
       }
     ],
@@ -545,11 +579,13 @@
       {
         "reviewer_name": "Liam",
         "reviewer_rating": 5,
+        "avatar_url": "https://ftp.goit.study/img/avatars/5.jpg",
         "comment": "Chloe is an amazing Vietnamese teacher. Her lessons are well-structured and informative."
       },
       {
         "reviewer_name": "Mia",
         "reviewer_rating": 4,
+        "avatar_url": "https://ftp.goit.study/img/avatars/6.jpg",
         "comment": "I have learned a lot from Chloe's lessons. Highly recommended for Vietnamese learners."
       }
     ],
@@ -579,11 +615,13 @@
       {
         "reviewer_name": "Olivia",
         "reviewer_rating": 5,
+        "avatar_url": "https://ftp.goit.study/img/avatars/4.jpg",
         "comment": "Henry is an excellent teacher. His lessons are engaging and effective."
       },
       {
         "reviewer_name": "Benjamin",
         "reviewer_rating": 4,
+        "avatar_url": "https://ftp.goit.study/img/avatars/3.jpg",
         "comment": "I have made significant progress with Henry's lessons. Highly recommended."
       }
     ],
@@ -608,11 +646,13 @@
       {
         "reviewer_name": "Sophie",
         "reviewer_rating": 5,
+        "avatar_url": "https://ftp.goit.study/img/avatars/1.jpg",
         "comment": "Emily is an excellent French teacher. Her lessons are well-structured and informative."
       },
       {
         "reviewer_name": "Noah",
         "reviewer_rating": 4,
+        "avatar_url": "https://ftp.goit.study/img/avatars/2.jpg",
         "comment": "I have learned a lot from Emily's lessons. Highly recommended for French learners."
       }
     ],
@@ -642,11 +682,13 @@
       {
         "reviewer_name": "Liam",
         "reviewer_rating": 5,
+        "avatar_url": "https://ftp.goit.study/img/avatars/19.jpg",
         "comment": "Isabella is an amazing Mandarin teacher. Her lessons are engaging and effective."
       },
       {
         "reviewer_name": "Mia",
         "reviewer_rating": 4,
+        "avatar_url": "https://ftp.goit.study/img/avatars/20.jpg",
         "comment": "I have improved my Mandarin skills significantly with Isabella's lessons. Highly recommended."
       }
     ],
@@ -671,11 +713,13 @@
       {
         "reviewer_name": "Ava",
         "reviewer_rating": 5,
+        "avatar_url": "https://ftp.goit.study/img/avatars/17.jpg",
         "comment": "Oliver is a fantastic teacher. His lessons are engaging and effective."
       },
       {
         "reviewer_name": "Noah",
         "reviewer_rating": 4,
+        "avatar_url": "https://ftp.goit.study/img/avatars/18.jpg",
         "comment": "I have made significant progress with Oliver's lessons. Highly recommended."
       }
     ],
@@ -705,11 +749,13 @@
       {
         "reviewer_name": "Liam",
         "reviewer_rating": 5,
+        "avatar_url": "https://ftp.goit.study/img/avatars/15.jpg",
         "comment": "Sophia is an excellent French teacher. Her lessons are well-structured and informative."
       },
       {
         "reviewer_name": "Mia",
         "reviewer_rating": 4,
+        "avatar_url": "https://ftp.goit.study/img/avatars/16.jpg",
         "comment": "I have learned a lot from Sophia's lessons. Highly recommended for French learners."
       }
     ],
@@ -734,11 +780,13 @@
       {
         "reviewer_name": "Olivia",
         "reviewer_rating": 5,
+        "avatar_url": "https://ftp.goit.study/img/avatars/13.jpg",
         "comment": "Lucas is an excellent Mandarin teacher. His lessons are engaging and effective."
       },
       {
         "reviewer_name": "Daniel",
         "reviewer_rating": 4,
+        "avatar_url": "https://ftp.goit.study/img/avatars/14.jpg",
         "comment": "I have improved my Mandarin skills significantly with Lucas's lessons. Highly recommended."
       }
     ],
@@ -768,11 +816,13 @@
       {
         "reviewer_name": "Oliver",
         "reviewer_rating": 5,
+        "avatar_url": "https://ftp.goit.study/img/avatars/11.jpg",
         "comment": "Sophie is an excellent teacher. Her lessons are engaging and effective."
       },
       {
         "reviewer_name": "Mia",
         "reviewer_rating": 4,
+        "avatar_url": "https://ftp.goit.study/img/avatars/12.jpg",
         "comment": "I have made significant progress with Sophie's lessons. Highly recommended."
       }
     ],
@@ -797,11 +847,13 @@
       {
         "reviewer_name": "Liam",
         "reviewer_rating": 5,
+        "avatar_url": "https://ftp.goit.study/img/avatars/9.jpg",
         "comment": "Emma is an excellent French teacher. Her lessons are well-structured and informative."
       },
       {
         "reviewer_name": "Mia",
         "reviewer_rating": 4,
+        "avatar_url": "https://ftp.goit.study/img/avatars/10.jpg",
         "comment": "I have learned a lot from Emma's lessons. Highly recommended for French learners."
       }
     ],
@@ -826,11 +878,13 @@
       {
         "reviewer_name": "Olivia",
         "reviewer_rating": 5,
+        "avatar_url": "https://ftp.goit.study/img/avatars/7.jpg",
         "comment": "Daniel is an excellent Mandarin teacher. His lessons are engaging and effective."
       },
       {
         "reviewer_name": "Daniel",
         "reviewer_rating": 4,
+        "avatar_url": "https://ftp.goit.study/img/avatars/8.jpg",
         "comment": "I have improved my Mandarin skills significantly with Daniel's lessons. Highly recommended."
       }
     ],
@@ -860,11 +914,13 @@
       {
         "reviewer_name": "Oliver",
         "reviewer_rating": 5,
+        "avatar_url": "https://ftp.goit.study/img/avatars/5.jpg",
         "comment": "James is an excellent teacher. His lessons are engaging and effective."
       },
       {
         "reviewer_name": "Mia",
         "reviewer_rating": 4,
+        "avatar_url": "https://ftp.goit.study/img/avatars/6.jpg",
         "comment": "I have made significant progress with James's lessons. Highly recommended."
       }
     ],
@@ -889,11 +945,13 @@
       {
         "reviewer_name": "Liam",
         "reviewer_rating": 5,
+        "avatar_url": "https://ftp.goit.study/img/avatars/4.jpg",
         "comment": "Natalie is an excellent French teacher. Her lessons are well-structured and informative."
       },
       {
         "reviewer_name": "Mia",
         "reviewer_rating": 4,
+        "avatar_url": "https://ftp.goit.study/img/avatars/3.jpg",
         "comment": "I have learned a lot from Natalie's lessons. Highly recommended for French learners."
       }
     ],
@@ -918,11 +976,13 @@
       {
         "reviewer_name": "Olivia",
         "reviewer_rating": 5,
+        "avatar_url": "https://ftp.goit.study/img/avatars/2.jpg",
         "comment": "William is an excellent Mandarin teacher. His lessons are engaging and effective."
       },
       {
         "reviewer_name": "Daniel",
         "reviewer_rating": 4,
+        "avatar_url": "https://ftp.goit.study/img/avatars/1.jpg",
         "comment": "I have improved my Mandarin skills significantly with William's lessons. Highly recommended."
       }
     ],

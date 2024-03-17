@@ -1,24 +1,62 @@
 import { FC, useState } from "react";
 import css from "./Card.module.css";
-import photo from "../../images/photo/photo-1.jpg";
-import photoComment from "../../images/photo/photo-comment-1.jpg";
+
 import heart from "../../images/heart.svg";
+import heartFav from "../../images/heart-fav.svg";
+
 import book from "../../images/book.svg";
 import star from "../../images/star.svg";
 import Modal from "../Modal/Modal";
 import BookForm from "../Forms/BookForm";
+import { ITeacher } from "../../types";
+import { useLocal } from "../../store";
 
-const Card: FC = () => {
+interface IProps {
+  data: ITeacher;
+}
+const Card: FC<IProps> = ({ data }) => {
   const [isMore, setMore] = useState(false);
   const [isShowBook, setShowBook] = useState(false);
+
+  const { favorites, addFav, removeFav } = useLocal((state) => ({
+    favorites: state.favorites,
+    addFav: state.addFav,
+    removeFav: state.removeFav,
+  }));
+
+  const {
+    id,
+    name,
+    surname,
+    avatar_url,
+    rating,
+    reviews,
+    languages,
+    levels,
+    price_per_hour,
+    lessons_done,
+    lesson_info,
+    experience,
+    conditions,
+  } = data;
+
+  const isFav = !!favorites.find((item) => item.id === id);
+
+  const handleClickFav = () => {
+    if (isFav) {
+      removeFav(id);
+    } else {
+      addFav(data);
+    }
+  };
 
   return (
     <article className={css.wrapper}>
       <div className={css.imageWrapper}>
         <img
           className={css.image}
-          src={photo}
-          alt="photo"
+          src={avatar_url}
+          alt={`${name} ${surname}`}
           width={96}
           height={96}
         />
@@ -32,86 +70,90 @@ const Card: FC = () => {
               <span>Lessons online</span>
             </li>
             <li className={css.headerItem}>
-              <span>Lessons done: 1120</span>
+              <span>Lessons done: {lessons_done}</span>
             </li>
             <li className={css.headerItem}>
               <img src={star} alt="Star" width={16} height={16} />
-              <span>Rating: 4.6</span>
+              <span>Rating: {rating}</span>
             </li>
             <li className={css.headerItem}>
               <span>
-                Price / 1 hour: <span className={css.price}>28$</span>
+                Price / 1 hour:{" "}
+                <span className={css.price}>{price_per_hour}$</span>
               </span>
             </li>
           </ul>
-          <button className={css.btnFav}>
-            <img src={heart} alt="Favorites" width={26} height={26} />
+          <button className={css.btnFav} type="button" onClick={handleClickFav}>
+            <img
+              src={isFav ? heartFav : heart}
+              alt="Favorites"
+              width={26}
+              height={26}
+            />
           </button>
         </div>
-        <h2 className={css.cardTitle}>Sarah Johnson</h2>
+        <h2 className={css.cardTitle}>{`${name} ${surname}`}</h2>
         <p className={css.cardInfo}>
-          <span className={css.greyText}>Speaks: </span>German, French
+          <span className={css.greyText}>Speaks: </span>
+          {languages.map((item, index) => (
+            <span key={index}>{item}, </span>
+          ))}
         </p>
         <p className={css.cardInfo}>
-          <span className={css.greyText}>Lesson Info: </span> Lessons are
-          structured to cover grammar, vocabulary, and practical usage of the
-          language.
+          <span className={css.greyText}>Lesson Info: </span> {lesson_info}
         </p>
 
         <p className={css.cardInfo}>
           <span className={css.greyText}>Conditions: </span>
-          Welcomes both adult learners and teenagers (13 years and
-          above).Provides personalized study plans
+          {conditions.map((item, index) => (
+            <span key={index}>{item} </span>
+          ))}
         </p>
+
         {!isMore && (
           <button className={css.btnReadMore} onClick={() => setMore(!isMore)}>
             Read more
           </button>
         )}
 
+        {isMore && <p className={css.text}>{experience}</p>}
+
         {isMore && (
-          <p className={css.text}>
-            Jane is an experienced and dedicated language teacher specializing
-            in German and French. She holds a Bachelor's degree in German
-            Studies and a Master's degree in French Literature. Her passion for
-            languages and teaching has driven her to become a highly proficient
-            and knowledgeable instructor. With over 10 years of teaching
-            experience, Jane has helped numerous students of various backgrounds
-            and proficiency levels achieve their language learning goals. She is
-            skilled at adapting her teaching methods to suit the needs and
-            learning styles of her students, ensuring that they feel supported
-            and motivated throughout their language journey.
-          </p>
+          <ul className={css.commentsList}>
+            {reviews.map((item, index) => (
+              <li className={css.commentItem} key={index}>
+                <div className={css.commentHeader}>
+                  <img
+                    className={css.commentPhoto}
+                    src={item.avatar_url}
+                    alt={item.reviewer_name}
+                    width={44}
+                    height={44}
+                  />
+                  <div>
+                    <h4 className={css.commentTitle}>{item.reviewer_name}</h4>
+                    <div className={css.commentRateWrapper}>
+                      <img src={star} alt="Star" width={16} height={16} />
+                      <span className={css.commentRate}>
+                        {item.reviewer_rating}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <p className={css.commentText}>{item.comment}</p>
+              </li>
+            ))}
+          </ul>
         )}
 
-        <ul className={css.commentsList}>
-          <li className={css.commentItem}>
-            <div className={css.commentHeader}>
-              <img
-                className={css.commentPhoto}
-                src={photoComment}
-                alt="Photo "
-              />
-              <div>
-                <h4 className={css.commentTitle}>Frank</h4>
-                <div className={css.commentRateWrapper}>
-                  <img src={star} alt="Star" width={16} height={16} />
-                  <span className={css.commentRate}>4.0</span>
-                </div>
-              </div>
-            </div>
-            <p className={css.commentText}>
-              Jane's lessons were very helpful. I made good progress.
-            </p>
-          </li>
+        <ul className={css.cardFooter}>
+          {levels.map((level, index) => (
+            <li className={css.footerItem} key={index}>
+              {level}
+            </li>
+          ))}
         </ul>
 
-        <ul className={css.cardFooter}>
-          <li className={css.footerItem}>#A1 Beginner </li>
-          <li className={css.footerItem}>#A2 Elementary </li>
-          <li className={css.footerItem}>#B1 Intermediate </li>
-          <li className={css.footerItem}>#B2 Upper-Intermediate</li>
-        </ul>
         {isMore && (
           <button className={css.btnBook} onClick={() => setShowBook(true)}>
             Book trial lesson
