@@ -1,1 +1,0 @@
-import{r as o,j as e}from"./index-hbQUqVPm.js";import{u as c,C as i}from"./Card-C5NHBITv.js";const n=()=>{const{items:s,loadTeachers:a}=c(r=>({loading:r.loading,error:r.error,items:r.items,loadTeachers:r.loadTeachers}));return o.useEffect(()=>{a()},[a]),e.jsx("main",{className:"container",children:s.map(r=>e.jsx(i,{data:r},r.id))})};export{n as default};
