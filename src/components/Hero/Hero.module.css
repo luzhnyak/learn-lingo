@@ -1,18 +1,23 @@
 .list {
   display: flex;
+  flex-wrap: wrap;
   padding: 0;
   margin: 0 0 24px 0;
   gap: 24px;
-  align-items: center;
+  align-items: stretch;
   list-style: none;
 }
 
 .itemLeft {
   padding: 98px 64px;
+  flex: 1;
   width: 720px;
-  height: 530px;
+  /* height: 530px; */
   background-color: #f8f8f8;
   border-radius: 30px;
+  @media only screen and (max-width: 767px) {
+    padding: 48px 24px;
+  }
 }
 
 .title {
@@ -37,11 +42,17 @@
   width: 471px;
   margin-bottom: 64px;
   line-height: 22px;
+  @media only screen and (max-width: 599px) {
+    width: 100%;
+  }
 }
 
 .itemRight {
-  width: 568px;
-  height: 530px;
+  width: 100%;
+  /* max-width: 568px; */
+  flex: 1;
+  min-width: 280px;
+  min-height: 480px;
   background-color: #bfd6ea;
   background-image: url("../../images/sticker.png");
   background-position: center bottom;
@@ -59,6 +70,9 @@
   font-size: 18px;
   font-weight: 600;
   color: var(--primary-color-black);
+  @media only screen and (max-width: 475px) {
+    width: 100%;
+  }
 }
 
 .btn:hover,

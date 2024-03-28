@@ -2,6 +2,7 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import { lazy } from "react";
 import "./firebase-api";
 import { SharedLayout } from "./components/SharedLayout";
+import { PrivateRoute } from "./pages/PrivateRoute";
 
 const HomePage = lazy(() => import("./pages/HomePage"));
 const TeachersPage = lazy(() => import("./pages/TeachersPage"));
@@ -15,7 +16,12 @@ const App = () => {
 
         <Route path="teachers" element={<TeachersPage />} />
 
-        <Route path="favorites" element={<FavoritesPage />} />
+        <Route
+          path="favorites"
+          element={
+            <PrivateRoute component={<FavoritesPage />} redirectTo="/" />
+          }
+        />
 
         <Route path="*" element={<Navigate to="/" />} />
       </Route>

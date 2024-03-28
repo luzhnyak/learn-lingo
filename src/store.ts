@@ -1,10 +1,14 @@
 import { create } from "zustand";
 import { devtools, persist } from "zustand/middleware";
 import { getDatabase, onValue, ref } from "firebase/database";
-import { ITeacher } from "./types";
+import { ITeacher, IUser } from "./types";
 
 interface LocalState {
+  currentUser: IUser | null;
+  isLogin: boolean;
   favorites: ITeacher[];
+  login: (user: IUser) => void;
+  logout: () => void;
   addFav: (teacher: ITeacher) => void;
   removeFav: (id: number) => void;
 }
@@ -13,7 +17,11 @@ export const useLocal = create<LocalState>()(
   devtools(
     persist(
       (set) => ({
+        isLogin: false,
+        currentUser: null,
         favorites: [],
+        login: (user) => set(() => ({ currentUser: user, isLogin: true })),
+        logout: () => set(() => ({ currentUser: null, isLogin: false })),
         addFav: (teacher) =>
           set((state) => ({ favorites: [...state.favorites, teacher] })),
 

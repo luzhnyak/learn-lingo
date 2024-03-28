@@ -1,60 +1,23 @@
 # Learn Lingo
 
+![Main page screenshot](/public/screenshot_main.jpg)
+
 ## Description
 
-Application for finding language teachers online.
+This project entails creating a web application for finding language teachers online. It offers users the ability to browse through a curated list of teachers, manage their favorites, and request appointments. The application comprises three main pages: Home, Teachers, and Favorites.
 
 [Frontend](https://github.com/luzhnyak/learn-lingo)
 [Live page](https://luzhnyak.github.io/learn-lingo/)
 
-## Features
+## Pages
 
-- **Browse Medicines**: Users can view a list of available medicines from different pharmacies.
-- **Add to Cart**: Users can add medicines to their shopping cart for purchase.
-- **Order Placement**: Users can fulfill order details such as name, email, phone, and address to place orders.
-- **Cart Management**: Users can manage their shopping cart by deleting items, increasing or decreasing quantities, and viewing the total price.
+- **Home Page:** displays the title, slogan, a prominent link to begin using the application, and the option to log in or register.
+- **Teachers Page:** users can browse teachers sorted by criteria like alphabetical order, price, and popularity. Cards display essential details about each teacher, with the option to load more for further exploration and making an appointment.
+- **Favorites Page:** authenticated users have access to a private page where they can manage teachers marked as favorites, mirroring the style of the Teachers page.
 
 ## Technologies Used
 
-### Frontend
-
-- **TypeScript**: A statically typed superset of JavaScript for improving development and catching errors early.
-- **React**: Frontend framework for building the user interface.
-- **React Router**: For routing within the application.
-- **Redux Toolkit**: State management library for managing the application's state.
-- **React Toastify**: For displaying toast notifications.
-- **Axios**: Promise-based HTTP client for making requests to the backend.
-- **Bootstrap**: CSS framework directed at responsive, mobile-first front-end web development.
-
-### Backend
-
-- **Node.js**: Backend runtime environment for executing JavaScript code.
-- **Express.js**: Web application framework for building APIs.
-- **MariaDB**: Relational system of databases.
-- **Sequelize**: ORM for Node.js based on a deferred computation strategy (promise).
-- **Cors**: Middleware for enabling Cross-Origin Resource Sharing.
-- **dotenv**: For loading environment variables from a .env file.
-- **morgan**: HTTP request logger middleware for logging incoming requests.
-- **Joi**: For validating request data.
-- **Nodemon**: Utility for automatically restarting the server during development.
-
-## Setup Instructions
-
-1. Clone the repository.
-2. Install dependencies for both frontend and backend using `npm install`.
-3. Create a `.env` file in the backend directory and set up environment variables.
-4. Start the backend server using `npm run dev` or `npm run dev`.
-5. Start the frontend development server using `npm run dev`.
-
-## Deployment
-
-The frontend is deployed using GitHub Pages, while the backend can be deployed to a hosting provider like Heroku, Render, Cyclic or AWS.
-
-If you want to deploy frontend using GitHub Pages, then follow further steps:
-
-1. Install the gh-pages package as a development dependency: `npm install gh-pages --save-dev`.
-2. Set homepage in package.json: `"homepage": "https://username.github.io/repository-name"`,
-3. Deploy project using `npm run deploy`.
+`HTML/CSS` `TypeScript` `React` `React Router` `Axios` `React Toastify` `Formik & Yup` `Responsive design` `Firebase` `Zustand`
 
 ## Contributors
 
