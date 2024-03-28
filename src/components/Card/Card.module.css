@@ -1,7 +1,7 @@
 .wrapper {
   display: flex;
   gap: 48px;
-  width: 1184px;
+  max-width: 1184px;
   border-radius: 24px;
   border: 1px solid grey;
   padding: 24px;
@@ -29,6 +29,7 @@
 
 .cardHeader {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   width: 100%;
 }
@@ -43,6 +44,7 @@
 
 .headerList {
   display: flex;
+  flex-wrap: wrap;
   gap: 16px;
   padding: 0;
   margin: 0;
@@ -127,6 +129,7 @@
   margin: 0;
   padding: 0;
   display: flex;
+  flex-wrap: wrap;
   gap: 8px;
   list-style: none;
 }

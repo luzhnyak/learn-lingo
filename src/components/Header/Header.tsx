@@ -6,8 +6,11 @@ import { useState } from "react";
 import Modal from "../Modal/Modal";
 import LoginForm from "../Forms/LoginForm";
 import RegisterForm from "../Forms/RegisterForm";
+import { FaBars } from "react-icons/fa";
+import { FaXmark } from "react-icons/fa6";
 
 const Header = () => {
+  const [isOpenMenu, setIsOpenMenu] = useState(false);
   const [isShowLogin, setShowLogin] = useState(false);
   const [isShowRegister, setShowRegister] = useState(false);
 
@@ -18,15 +21,40 @@ const Header = () => {
           <img src={ukraine} alt="LearnLingo" width={28} height={28} />
           LearnLingo
         </NavLink>
-        <ul className={css.menu}>
+        <ul
+          className={
+            isOpenMenu ? [css.menu, css.isShowMenu].join(" ") : css.menu
+          }
+        >
           <li className={css.menuItem}>
-            <NavLink to="/">Home</NavLink>
+            <NavLink
+              to="/"
+              onClick={() => {
+                setIsOpenMenu(!isOpenMenu);
+              }}
+            >
+              Home
+            </NavLink>
           </li>
-          <li className={css.menu}>
-            <NavLink to="/teachers">Teachers</NavLink>
+          <li className={css.menuItem}>
+            <NavLink
+              to="/teachers"
+              onClick={() => {
+                setIsOpenMenu(!isOpenMenu);
+              }}
+            >
+              Teachers
+            </NavLink>
           </li>
-          <li className={css.menu}>
-            <NavLink to="/favorites">Favorites</NavLink>
+          <li className={css.menuItem}>
+            <NavLink
+              to="/favorites"
+              onClick={() => {
+                setIsOpenMenu(!isOpenMenu);
+              }}
+            >
+              Favorites
+            </NavLink>
           </li>
         </ul>
         <div className={css.wrapperBtn}>
@@ -39,6 +67,15 @@ const Header = () => {
             onClick={() => setShowRegister(true)}
           >
             Registration
+          </button>
+          <button
+            className={css.burgerMenu}
+            type="button"
+            onClick={() => {
+              setIsOpenMenu(!isOpenMenu);
+            }}
+          >
+            {isOpenMenu ? <FaXmark size="24px" /> : <FaBars size="24px" />}
           </button>
         </div>
       </nav>
