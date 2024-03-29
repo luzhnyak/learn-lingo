@@ -4,12 +4,14 @@ import { Formik, Form, Field, ErrorMessage, FormikHelpers } from "formik";
 import * as yup from "yup";
 import eye from "../../images/eye.svg";
 import eyeOff from "../../images/eye-off.svg";
+import { toast } from "react-toastify";
 
 import {
   getAuth,
   createUserWithEmailAndPassword,
   updateProfile,
 } from "firebase/auth";
+import { useLocal } from "../../store";
 
 const registerSchema = yup.object({
   name: yup.string().min(2).required(),
@@ -29,8 +31,16 @@ const initialValues: SubmitValues = {
   password: "",
 };
 
-const RegisterForm: FC = () => {
+type Props = {
+  setShowRegister: (value: boolean) => void;
+};
+
+const RegisterForm: FC<Props> = ({ setShowRegister }) => {
   const [showPassword, setShowPassword] = useState(false);
+
+  const { login } = useLocal((state) => ({
+    login: state.login,
+  }));
 
   const handleSubmit = async (
     values: SubmitValues,
@@ -41,35 +51,28 @@ const RegisterForm: FC = () => {
 
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        // Signed up
         const user = userCredential.user;
 
         if (auth.currentUser) {
           updateProfile(auth.currentUser, {
             displayName: name,
-            // photoURL: 'https://example.com/jane-q-user/profile.jpg',
           })
             .then(() => {
-              console.log(user);
-              // dispatch(
-              //   setUser({
-              //     id: user.uid,
-              //     name: user.displayName,
-              //     email: user.email,
-              //     token: user.accessToken,
-              //   })
-              // );
-            })
-            .catch((error) => {
-              console.log(error);
+              login({
+                id: user.uid || "",
+                name: user.displayName || "",
+                email: user.email || "",
+              });
 
-              // toast.error(error.message);
+              setShowRegister(false);
+            })
+            .catch(() => {
+              toast.error("Invalid data. Sign in is failed. Please try again.");
             });
         }
       })
-      .catch((error) => {
-        console.log(error);
-        // toast.error(error.message);
+      .catch(() => {
+        toast.error("Invalid data. Sign in is failed. Please try again.");
       });
 
     resetForm();

@@ -1,4 +1,5 @@
 .wrapper {
+  position: relative;
   display: flex;
   gap: 48px;
   max-width: 1184px;
@@ -7,15 +8,34 @@
   padding: 24px;
   margin: 0 auto;
   margin-bottom: 20px;
+  @media only screen and (max-width: 1020px) {
+    flex-direction: column;
+    gap: 16px;
+  }
 }
 
 .imageWrapper {
+  position: relative;
   width: 126px;
   height: 126px;
   padding: 12px;
   border-radius: 50%;
   border: 3px solid var(--secondary-color-fon);
   display: block;
+  &:after {
+    position: absolute;
+    content: "";
+    background-color: #38cd3e;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    height: 12px;
+    width: 12px;
+    top: 20px;
+    right: 20px;
+  }
+  @media only screen and (max-width: 475px) {
+    /* position: absolute; */
+  }
 }
 
 .image {
@@ -29,9 +49,14 @@
 
 .cardHeader {
   display: flex;
-  flex-wrap: wrap;
+
   align-items: center;
   width: 100%;
+  @media only screen and (max-width: 800px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
 }
 
 .languages {
@@ -48,8 +73,17 @@
   gap: 16px;
   padding: 0;
   margin: 0;
-  margin-right: 64px;
+  margin-right: 90px;
   list-style: none;
+  @media only screen and (max-width: 1074px) {
+    margin-right: 36px;
+  }
+  @media only screen and (max-width: 1020px) {
+    margin-right: 0px;
+  }
+  @media only screen and (max-width: 800px) {
+    flex-direction: column;
+  }
 }
 
 .headerItem {
@@ -67,13 +101,14 @@
   color: #38cd3e;
 }
 
-.headerItem:not(:last-child)::after {
-  content: "";
-  margin-left: 16px;
-  /* margin-right: 16px; */
-  width: 0px;
-  height: 16px;
-  border: 1px solid rgba(18, 20, 23, 0.2);
+@media only screen and (min-width: 801px) {
+  .headerItem:not(:last-child)::after {
+    content: "";
+    margin-left: 16px;
+    width: 0px;
+    height: 16px;
+    border: 1px solid rgba(18, 20, 23, 0.2);
+  }
 }
 
 .cardTitle {
@@ -85,9 +120,11 @@
 }
 
 .btnFav {
+  position: absolute;
   display: flex;
   padding: 0;
-  margin: 0;
+  right: 24px;
+  top: 24px;
   width: 26px;
   height: 26px;
   align-items: center;
@@ -162,6 +199,10 @@
   background: var(--primary-color-fon);
   border-radius: 12px;
   border: none;
+
+  @media only screen and (max-width: 474px) {
+    width: 100%;
+  }
 }
 
 .btnBook:hover,
@@ -216,7 +257,7 @@
 }
 
 .commentText {
-  width: 400px;
+  max-width: 400px;
   font-weight: 500;
   font-size: 16px;
   line-height: 24px;

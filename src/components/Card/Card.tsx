@@ -10,6 +10,8 @@ import Modal from "../Modal/Modal";
 import BookForm from "../Forms/BookForm";
 import { ITeacher } from "../../types";
 import { useLocal } from "../../store";
+import LoginForm from "../Forms/LoginForm";
+import { toast } from "react-toastify";
 
 interface IProps {
   data: ITeacher;
@@ -17,9 +19,11 @@ interface IProps {
 const Card: FC<IProps> = ({ data }) => {
   const [isMore, setMore] = useState(false);
   const [isShowBook, setShowBook] = useState(false);
+  const [isShowLogin, setShowLogin] = useState(false);
 
-  const { favorites, addFav, removeFav } = useLocal((state) => ({
+  const { favorites, addFav, removeFav, isLogin } = useLocal((state) => ({
     favorites: state.favorites,
+    isLogin: state.isLogin,
     addFav: state.addFav,
     removeFav: state.removeFav,
   }));
@@ -43,6 +47,10 @@ const Card: FC<IProps> = ({ data }) => {
   const isFav = !!favorites.find((item) => item.id === id);
 
   const handleClickFav = () => {
+    if (!isLogin) {
+      toast.warning("You must be registered to add to favorites!");
+      return;
+    }
     if (isFav) {
       removeFav(id);
     } else {
@@ -162,6 +170,11 @@ const Card: FC<IProps> = ({ data }) => {
         {isShowBook && (
           <Modal onClose={() => setShowBook(false)}>
             <BookForm />
+          </Modal>
+        )}
+        {isShowLogin && (
+          <Modal onClose={() => setShowLogin(false)}>
+            <LoginForm setShowLogin={setShowLogin} />
           </Modal>
         )}
       </div>

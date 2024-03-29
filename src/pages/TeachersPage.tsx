@@ -1,6 +1,7 @@
 import { FC, useEffect } from "react";
 // import shallow from "zustand/shallow";
 import Card from "../components/Card/Card";
+import ScrollUp from "../components/ScrollUp/ScrollUp";
 import { useTeachers } from "../store";
 // import { getTeachers } from "../services/teachersApi";
 
@@ -24,6 +25,7 @@ const TeachersPage: FC = () => {
       {items.map((item) => (
         <Card key={item.id} data={item} />
       ))}
+      <ScrollUp />
     </main>
   );
 };

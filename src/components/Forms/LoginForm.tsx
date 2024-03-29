@@ -6,6 +6,7 @@ import eye from "../../images/eye.svg";
 import eyeOff from "../../images/eye-off.svg";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { useLocal } from "../../store";
+import { toast } from "react-toastify";
 
 const loginSchema = yup.object({
   email: yup.string().email().required(),
@@ -42,9 +43,7 @@ const LoginForm: FC<Props> = ({ setShowLogin }) => {
 
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        // Signed up
         const user = userCredential.user;
-        console.log(user);
 
         if (!user) return;
 
@@ -56,10 +55,8 @@ const LoginForm: FC<Props> = ({ setShowLogin }) => {
 
         setShowLogin(false);
       })
-      .catch((error) => {
-        console.log(error);
-
-        // toast.error(error.message);
+      .catch(() => {
+        toast.error("Invalid data. Sign in is failed. Please try again.");
       });
 
     resetForm();

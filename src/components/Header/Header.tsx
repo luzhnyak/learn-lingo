@@ -133,7 +133,7 @@ const Header = () => {
       )}
       {isShowRegister && (
         <Modal onClose={() => setShowRegister(false)}>
-          <RegisterForm />
+          <RegisterForm setShowRegister={setShowRegister} />
         </Modal>
       )}
     </header>
