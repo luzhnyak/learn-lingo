@@ -1,7 +1,8 @@
 import { create } from "zustand";
 import { devtools, persist } from "zustand/middleware";
-import { getDatabase, onValue, ref } from "firebase/database";
+
 import { ITeacher, IUser } from "./types";
+import { getTeachers } from "./services/teachersApi";
 
 interface LocalState {
   currentUser: IUser | null;
@@ -10,7 +11,7 @@ interface LocalState {
   login: (user: IUser) => void;
   logout: () => void;
   addFav: (teacher: ITeacher) => void;
-  removeFav: (id: number) => void;
+  removeFav: (id: string) => void;
 }
 
 export const useLocal = create<LocalState>()(
@@ -37,6 +38,7 @@ export const useLocal = create<LocalState>()(
 
 interface TeachersState {
   items: ITeacher[];
+  lastKey: string;
   loading: boolean;
   error: Error | null;
   loadTeachers: () => void;
@@ -46,22 +48,22 @@ export const useTeachers = create<TeachersState>()(
   devtools((set) => ({
     items: [],
     loading: false,
+    lastKey: "-t0",
     error: null,
-    loadTeachers: () => {
+    loadTeachers: async () => {
       set({ loading: true });
 
-      const db = getDatabase();
-      onValue(ref(db, "teachers/"), (snapshot) => {
-        const data = snapshot.val();
+      const currentState = useTeachers.getState();
 
-        if (!data) {
-          set({ loading: false });
-          return;
-        }
+      console.log("currentState.lastKey", currentState);
 
-        set(() => ({ items: data }));
-        set({ loading: false });
-      });
+      const newItems = await getTeachers(currentState.lastKey);
+
+      console.log("newItems", newItems);
+
+      set((state) => ({ items: [...state.items, ...newItems] }));
+
+      set((state) => ({ lastKey: state.items[state.items.length - 1].id }));
     },
   }))
 );

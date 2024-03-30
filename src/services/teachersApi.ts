@@ -1,8 +1,33 @@
-// import { getDatabase, onValue, ref } from "firebase/database";
-// import { ITeacher } from "../types";
+import {
+  getDatabase,
+  ref,
+  query,
+  orderByKey,
+  limitToFirst,
+  startAfter,
+  get,
+} from "firebase/database";
+import { ITeacher } from "../types";
 
-// export const getTeachers = () => {
-//   console.log("data0");
+export const getTeachers = async (lastKey: string) => {
+  const db = getDatabase();
+  const newItems: ITeacher[] = [];
 
-//   let items: ITeacher[] = [];
-// };
+  const recentPostsRef = query(
+    ref(db, "teachers"),
+    orderByKey(),
+    startAfter(lastKey),
+    limitToFirst(4)
+  );
+
+  const snapshot = await get(recentPostsRef);
+
+  snapshot.forEach((childSnapshot) => {
+    newItems.push({
+      ...childSnapshot.val(),
+      id: childSnapshot.key,
+    });
+  });
+
+  return newItems;
+};

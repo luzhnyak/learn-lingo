@@ -20,11 +20,18 @@ const TeachersPage: FC = () => {
     loadTeachers();
   }, [loadTeachers]);
 
+  const handleLoadMore = () => {
+    loadTeachers();
+  };
+
   return (
     <main className="container">
       {items.map((item) => (
         <Card key={item.id} data={item} />
       ))}
+      <button type="button" onClick={handleLoadMore}>
+        Load More
+      </button>
       <ScrollUp />
     </main>
   );
