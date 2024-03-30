@@ -1,1 +1,0 @@
-import{a as o,j as s}from"./index-DtmkD1sH.js";import{C as t}from"./Card-CvU12N9O.js";const n=()=>{const{favorites:r}=o(a=>({favorites:a.favorites}));return s.jsx("main",{className:"container",children:r.map(a=>s.jsx(t,{data:a},a.id))})};export{n as default};
