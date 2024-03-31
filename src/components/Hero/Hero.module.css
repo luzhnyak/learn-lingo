@@ -61,6 +61,9 @@
 }
 
 .btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
   width: 267px;
   height: 60px;

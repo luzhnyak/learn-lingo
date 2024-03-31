@@ -40,6 +40,7 @@ interface TeachersState {
   items: ITeacher[];
   lastKey: string;
   loading: boolean;
+  isLoadMore: boolean;
   error: Error | null;
   loadTeachers: () => void;
 }
@@ -49,21 +50,50 @@ export const useTeachers = create<TeachersState>()(
     items: [],
     loading: false,
     lastKey: "-t0",
+    isLoadMore: true,
     error: null,
     loadTeachers: async () => {
       set({ loading: true });
 
       const currentState = useTeachers.getState();
 
-      console.log("currentState.lastKey", currentState);
-
       const newItems = await getTeachers(currentState.lastKey);
 
-      console.log("newItems", newItems);
+      if (newItems.length == 0) {
+        set({ isLoadMore: false });
+      }
 
       set((state) => ({ items: [...state.items, ...newItems] }));
 
       set((state) => ({ lastKey: state.items[state.items.length - 1].id }));
+
+      set({ loading: false });
+    },
+  }))
+);
+
+interface IFiltersState {
+  filterLanguage: string;
+  setFilterLanguage: (filter: string) => void;
+  filterLevel: string;
+  setFilterLevel: (filter: string) => void;
+  filterPrice: string;
+  setFilterPrice: (filter: string) => void;
+}
+
+export const useFilters = create<IFiltersState>()(
+  devtools((set) => ({
+    filterLanguage: "",
+    filterLevel: "",
+    filterPrice: "",
+    setFilterLanguage: (filter) => {
+      set({ filterLanguage: filter });
+    },
+    setFilterLevel: (filter) => {
+      set({ filterLevel: filter });
+    },
+    setFilterPrice: (filter: string) => {
+      set({ filterPrice: filter });
     },
   }))
 );

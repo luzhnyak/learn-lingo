@@ -1,17 +1,30 @@
-import { FC, useEffect } from "react";
+import { FC, useEffect, useState } from "react";
 // import shallow from "zustand/shallow";
 import Card from "../components/Card/Card";
 import ScrollUp from "../components/ScrollUp/ScrollUp";
-import { useTeachers } from "../store";
-// import { getTeachers } from "../services/teachersApi";
+import { useFilters, useTeachers } from "../store";
+import LoadMore from "../components/LoadMore/LoadMore";
+import Filter from "../components/Filter/Filter";
 
 const TeachersPage: FC = () => {
-  const { items, loadTeachers } = useTeachers(
+  const { items, loadTeachers, isLoadMore } = useTeachers(
     (state) => ({
       loading: state.loading,
+      isLoadMore: state.isLoadMore,
       error: state.error,
       items: state.items,
       loadTeachers: state.loadTeachers,
+    })
+    // shallow
+  );
+
+  const { filterLanguage, filterLevel, filterPrice } = useFilters(
+    (state) => ({
+      filterLanguage: state.filterLanguage,
+
+      filterLevel: state.filterLevel,
+
+      filterPrice: state.filterPrice,
     })
     // shallow
   );
@@ -20,18 +33,37 @@ const TeachersPage: FC = () => {
     loadTeachers();
   }, [loadTeachers]);
 
-  const handleLoadMore = () => {
-    loadTeachers();
-  };
+  const [filteredItems, setFilteredItems] = useState(items);
+
+  useEffect(() => {
+    let tempItems = [...items];
+
+    if (filterLanguage && filterLanguage !== "All") {
+      tempItems = tempItems.filter((item) =>
+        item.languages.includes(filterLanguage)
+      );
+    }
+
+    if (filterLevel && filterLevel !== "All") {
+      tempItems = tempItems.filter((item) => item.levels.includes(filterLevel));
+    }
+
+    if (filterPrice && filterPrice !== "All") {
+      tempItems = tempItems.filter(
+        (item) => +item.price_per_hour <= +filterPrice
+      );
+    }
+
+    setFilteredItems([...tempItems]);
+  }, [items, filterLanguage, filterLevel, filterPrice]);
 
   return (
     <main className="container">
-      {items.map((item) => (
+      <Filter />
+      {filteredItems.map((item) => (
         <Card key={item.id} data={item} />
       ))}
-      <button type="button" onClick={handleLoadMore}>
-        Load More
-      </button>
+      {isLoadMore && <LoadMore />}
       <ScrollUp />
     </main>
   );

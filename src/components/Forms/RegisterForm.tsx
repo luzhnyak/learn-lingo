@@ -126,7 +126,7 @@ const RegisterForm: FC<Props> = ({ setShowRegister }) => {
                 className={`${css.input} ${
                   errors.password ? css.inputError : ""
                 }`}
-                type={showPassword ? "password" : "text"}
+                type={showPassword ? "text" : "password"}
                 name="password"
                 placeholder="Password"
                 value={values.password}
@@ -141,7 +141,7 @@ const RegisterForm: FC<Props> = ({ setShowRegister }) => {
                 className={css.btnShowPassword}
                 onClick={() => setShowPassword(!showPassword)}
               >
-                <img src={showPassword ? eyeOff : eye} alt="ShowPassword" />
+                <img src={showPassword ? eye : eyeOff} alt="ShowPassword" />
               </button>
             </div>
             <button className={css.btn}>Register</button>

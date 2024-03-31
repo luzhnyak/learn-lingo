@@ -4,6 +4,8 @@ import { Suspense } from "react";
 import Header from "./Header/Header";
 import { ToastContainer } from "react-toastify";
 
+import "react-toastify/dist/ReactToastify.css";
+
 export const SharedLayout = () => {
   return (
     <div className="">
@@ -12,8 +14,8 @@ export const SharedLayout = () => {
         <Outlet />
       </Suspense>
       <ToastContainer
-        position="top-center"
-        autoClose={2000}
+        position="top-right"
+        autoClose={3000}
         hideProgressBar={true}
       />
     </div>
