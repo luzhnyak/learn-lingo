@@ -144,7 +144,9 @@ const RegisterForm: FC<Props> = ({ setShowRegister }) => {
                 <img src={showPassword ? eye : eyeOff} alt="ShowPassword" />
               </button>
             </div>
-            <button className={css.btn}>Register</button>
+            <button className={css.btn} type="submit">
+              Register
+            </button>
           </Form>
         )}
       </Formik>

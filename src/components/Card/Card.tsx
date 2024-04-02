@@ -93,7 +93,7 @@ const Card: FC<IProps> = ({ data }) => {
           </ul>
           <button className={css.btnFav} type="button" onClick={handleClickFav}>
             <img
-              src={isFav ? heartFav : heart}
+              src={isFav && isLogin ? heartFav : heart}
               alt="Favorites"
               width={26}
               height={26}

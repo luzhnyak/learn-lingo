@@ -113,7 +113,9 @@ const LoginForm: FC<Props> = ({ setShowLogin }) => {
                 <img src={showPassword ? eye : eyeOff} alt="ShowPassword" />
               </button>
             </div>
-            <button className={css.btn}>Log In</button>
+            <button className={css.btn} type="submit">
+              Log In
+            </button>
           </Form>
         )}
       </Formik>

@@ -2,6 +2,7 @@ import { FC } from "react";
 import css from "./Form.module.css";
 import { Formik, Form, Field, ErrorMessage, FormikHelpers } from "formik";
 import * as yup from "yup";
+import { toast } from "react-toastify";
 
 const bookSchema = yup.object({
   options: yup.string().required(),
@@ -35,6 +36,7 @@ const BookForm: FC<Props> = ({ setShowBook }) => {
   ) => {
     console.log("values", values);
     setShowBook(false);
+    toast.info("Trial lesson booked!");
     resetForm();
   };
 
