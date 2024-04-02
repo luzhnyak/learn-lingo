@@ -19,6 +19,11 @@ This project entails creating a web application for finding language teachers on
 
 `HTML/CSS` `TypeScript` `React` `React Router` `Axios` `React Toastify` `Formik & Yup` `Responsive design` `Firebase` `Zustand`
 
+## Website layout
+
+You can view the website design
+[ here](https://www.figma.com/file/dewf5jVviSTuWMMyU3d8Mc/Learn-Lingo)
+
 ## Contributors
 
 - [Oleh Luzhniak](https://github.com/luzhnyak)

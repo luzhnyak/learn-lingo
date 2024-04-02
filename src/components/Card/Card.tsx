@@ -169,7 +169,7 @@ const Card: FC<IProps> = ({ data }) => {
         )}
         {isShowBook && (
           <Modal onClose={() => setShowBook(false)}>
-            <BookForm />
+            <BookForm setShowBook={setShowBook} />
           </Modal>
         )}
         {isShowLogin && (

@@ -36,17 +36,14 @@ const Filter = () => {
     setFilterLevel,
     filterPrice,
     setFilterPrice,
-  } = useFilters(
-    (state) => ({
-      filterLanguage: state.filterLanguage,
-      setFilterLanguage: state.setFilterLanguage,
-      filterLevel: state.filterLevel,
-      setFilterLevel: state.setFilterLevel,
-      filterPrice: state.filterPrice,
-      setFilterPrice: state.setFilterPrice,
-    })
-    // shallow
-  );
+  } = useFilters((state) => ({
+    filterLanguage: state.filterLanguage,
+    setFilterLanguage: state.setFilterLanguage,
+    filterLevel: state.filterLevel,
+    setFilterLevel: state.setFilterLevel,
+    filterPrice: state.filterPrice,
+    setFilterPrice: state.setFilterPrice,
+  }));
 
   return (
     <div className={css.container}>
@@ -66,7 +63,7 @@ const Filter = () => {
           onSelect={setFilterLevel}
         />
       </div>
-      <div className={css.levelWrapper}>
+      <div className={css.priceWrapper}>
         <span className={css.label}>Price</span>
         <Dropdown
           items={filterPriceOptions}

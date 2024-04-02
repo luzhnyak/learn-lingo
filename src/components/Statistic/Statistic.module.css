@@ -1,10 +1,6 @@
 .wrapper {
   padding: 40px 16px;
   border: 1px dashed #9fb7ce;
-  /* background-image: url("../../images/border.svg");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center; */
   border-radius: 30px;
   margin-bottom: 32px;
 }
@@ -16,7 +12,6 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-around;
-  /* column-gap: 100px; */
   row-gap: 40px;
   list-style: none;
 }

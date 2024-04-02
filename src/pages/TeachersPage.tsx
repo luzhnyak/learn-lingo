@@ -1,5 +1,5 @@
 import { FC, useEffect, useState } from "react";
-// import shallow from "zustand/shallow";
+
 import Card from "../components/Card/Card";
 import ScrollUp from "../components/ScrollUp/ScrollUp";
 import { useFilters, useTeachers } from "../store";
@@ -7,27 +7,21 @@ import LoadMore from "../components/LoadMore/LoadMore";
 import Filter from "../components/Filter/Filter";
 
 const TeachersPage: FC = () => {
-  const { items, loadTeachers, isLoadMore } = useTeachers(
-    (state) => ({
-      loading: state.loading,
-      isLoadMore: state.isLoadMore,
-      error: state.error,
-      items: state.items,
-      loadTeachers: state.loadTeachers,
-    })
-    // shallow
-  );
+  const { items, loadTeachers, isLoadMore } = useTeachers((state) => ({
+    loading: state.loading,
+    isLoadMore: state.isLoadMore,
+    error: state.error,
+    items: state.items,
+    loadTeachers: state.loadTeachers,
+  }));
 
-  const { filterLanguage, filterLevel, filterPrice } = useFilters(
-    (state) => ({
-      filterLanguage: state.filterLanguage,
+  const { filterLanguage, filterLevel, filterPrice } = useFilters((state) => ({
+    filterLanguage: state.filterLanguage,
 
-      filterLevel: state.filterLevel,
+    filterLevel: state.filterLevel,
 
-      filterPrice: state.filterPrice,
-    })
-    // shallow
-  );
+    filterPrice: state.filterPrice,
+  }));
 
   useEffect(() => {
     loadTeachers();

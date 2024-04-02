@@ -4,7 +4,7 @@
   gap: 48px;
   max-width: 1184px;
   border-radius: 24px;
-  border: 1px solid grey;
+  background-color: var(--primary-color-white);
   padding: 24px;
   margin: 0 auto;
   margin-bottom: 20px;
@@ -32,9 +32,6 @@
     width: 12px;
     top: 20px;
     right: 20px;
-  }
-  @media only screen and (max-width: 475px) {
-    /* position: absolute; */
   }
 }
 
@@ -155,8 +152,6 @@
 }
 
 .text {
-  /* Jane is an experienced and dedicated language teacher specializing in German and French. She holds a Bachelor's degree in German Studies and a Master's degree in French Literature. Her passion for languages and teaching has driven her to become a highly proficient and knowledgeable instructor. With over 10 years of teaching experience, Jane has helped numerous students of various backgrounds and proficiency levels achieve their language learning goals. She is skilled at adapting her teaching methods to suit the needs and learning styles of her students, ensuring that they feel supported and motivated throughout their language journey. */
-
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;

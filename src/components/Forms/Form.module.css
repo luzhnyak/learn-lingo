@@ -3,10 +3,7 @@
   @media only screen and (max-width: 767px) {
     width: 400px;
   }
-  @media only screen and (max-width: 600px) {
-    width: 300px;
-  }
-  @media only screen and (max-width: 425px) {
+  @media only screen and (max-width: 475px) {
     width: 100%;
   }
 }
@@ -24,6 +21,9 @@
   margin: 0 0 40px 0;
   line-height: 22px;
   color: rgba(18, 20, 23, 0.8);
+  @media only screen and (max-width: 475px) {
+    margin: 0 0 20px 0;
+  }
 }
 
 .inputWrapper {

@@ -12,8 +12,7 @@
   background-color: var(--primary-color-white);
   border-radius: 30px;
 
-  padding: 64px;
-  /* width: 600px; */
+  padding: 64px;  
   min-width: 280px;
   min-height: 100px;
   left: 50%;
@@ -24,6 +23,10 @@
   overflow: auto;
   @media only screen and (max-width: 767px) {
     padding: 32px;
+  }
+  @media only screen and (max-width: 475px) {
+    width: 90%;
+    padding: 24px;
   }
 }
 
